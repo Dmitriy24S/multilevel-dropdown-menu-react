@@ -9,7 +9,7 @@
 }
 
 .dropdown {
-  transform: translateX(-25%);
+  transform: translateX(-35%);
   overflow: hidden;
   transition: height var(--speed) ease;
 }
