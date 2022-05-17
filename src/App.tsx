@@ -20,8 +20,8 @@ function App() {
   // Framer motion
   const [isDropdownMenuOpen2, setIsDropdownMenuOpen2] = useState(false);
   const [activeMenu2, setActiveMenu2] = useState("main");
-  const [menuHeight2, setMenuHeight2] = useState("auto");
-  const nodeMenuRef = useRef<any>();
+  const [menuHeight2, setMenuHeight2] = useState<string | number>("auto");
+  const nodeMenuRef = useRef<HTMLDivElement | null>(null);
 
   // Framer motion height
   useEffect(() => {
@@ -33,9 +33,9 @@ function App() {
 
   return (
     <div className="App bg-slate-900 min-h-screen overflow-x-hidden">
-      <main className=" p-4 shadow-xl flex justify-between gap-4">
+      <main className=" p-4 shadow-xl flex flex-1 flex-wrap justify-evenly gap-4">
         {/* CSS Transition nav dropdown */}
-        <section className="bg-slate-700 border-b border-b-slate-500 p-4 shadow-xl w-[45%]">
+        <section className="bg-slate-700 border-b border-b-slate-500 p-4 shadow-xl w-[45%] max-w-md min-w-[16rem]">
           <div className="header-content-container text-white flex flex-col gap-4 items-center">
             <ul className="flex gap-4">
               <li>
@@ -192,7 +192,7 @@ function App() {
           </div>
         </section>
         {/* Framer Motion nav dropdown */}
-        <section className="bg-slate-700 border-b border-b-slate-500 p-4 shadow-xl w-[45%]">
+        <section className="bg-slate-700 border-b border-b-slate-500 p-4 shadow-xl w-[45%] max-w-md min-w-[16rem]">
           <div className="header-content-container text-white flex flex-col gap-4 items-center">
             <ul className="flex gap-4">
               <li>
