@@ -63,3 +63,75 @@
   transform: translateX(110%);
   transition: all var(--speed) ease;
 }
+
+/* CSS Transition - modal */
+
+/* modal enter */
+.modal-container-enter .modal-overlay {
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.modal-container-enter .modal-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 200ms ease, transform 300ms ease;
+}
+
+/* modal enter active */
+.modal-container-enter-active .modal-overlay {
+  opacity: 1;
+}
+.modal-container-enter-active .modal-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* modal exit */
+.modal-container-exit .modal-overlay {
+  opacity: 1;
+  transition: opacity 150ms ease;
+}
+.modal-container-exit .modal-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms ease, transform 300ms ease;
+}
+
+/* modal exit active */
+.modal-container-exit-active .modal-overlay {
+  opacity: 0;
+}
+.modal-container-exit-active .modal-content {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.modal-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.modal-content {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  justify-content: center;
+  border-radius: 4px;
+  height: 150px;
+  width: 300px;
+  z-index: 100;
+}

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { motion, AnimatePresence } from "framer-motion";
-import { IoCaretDown } from "react-icons/io5";
+import { IoCaretDown, IoCloseOutline } from "react-icons/io5";
 import "./App.css";
 
 function App() {
@@ -31,12 +31,16 @@ function App() {
     }
   }, [activeMenu2, isDropdownMenuOpen2]);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen2, setIsModalOpen2] = useState(false);
+
   return (
     <div className="App bg-slate-900 min-h-screen overflow-x-hidden">
-      <main className=" p-4 shadow-xl flex flex-1 flex-wrap justify-evenly gap-4">
-        {/* CSS Transition nav dropdown */}
-        <section className="bg-slate-700 border-b border-b-slate-500 p-4 shadow-xl w-[45%] max-w-md min-w-[16rem]">
-          <div className="header-content-container text-white flex flex-col gap-4 items-center">
+      <main className="p-4 flex flex-1 flex-wrap justify-evenly gap-4">
+        {/* CSS Transition */}
+        <section className="p-4 w-[45%] max-w-md min-w-[16rem] flex flex-col gap-6 items-center justify-center">
+          {/* CSS Transition nav dropdown */}
+          <div className="header-content-container text-white flex flex-col gap-4 items-center bg-slate-700 border-b border-b-slate-500 shadow-xl p-4 w-full">
             <ul className="flex gap-4">
               <li>
                 <button className="bg-slate-600 px-4 py-2.5 rounded-full cursor-pointer hover:bg-slate-500">
@@ -190,10 +194,46 @@ function App() {
             </ul>
             <h2>CSS Transition Dropdown</h2>
           </div>
+          {/* CSS Transition modal */}
+          <div className="modal-example-container">
+            <button
+              className="bg-white text-blue-500 font-medium transition-colors rounded px-3 py-2.5 hover:bg-blue-500 hover:text-white"
+              onClick={() => setIsModalOpen(!isModalOpen)}
+            >
+              Open Modal
+            </button>
+            <CSSTransition
+              timeout={300}
+              unmountOnExit
+              mountOnEnter
+              in={isModalOpen}
+              classNames="modal-container"
+            >
+              <section className="modal">
+                <div
+                  className="modal-overlay"
+                  onClick={() => setIsModalOpen(false)}
+                />
+                <div className="modal-content relative">
+                  <button
+                    className="absolute top-4 right-4 text-2xl transition-opacity hover:opacity-60 "
+                    aria-label="Close modal"
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    <IoCloseOutline />
+                  </button>
+                  <p className="font-medium tracking-wider">
+                    This is the modal.
+                  </p>
+                </div>
+              </section>
+            </CSSTransition>
+          </div>
         </section>
-        {/* Framer Motion nav dropdown */}
-        <section className="bg-slate-700 border-b border-b-slate-500 p-4 shadow-xl w-[45%] max-w-md min-w-[16rem]">
-          <div className="header-content-container text-white flex flex-col gap-4 items-center">
+        {/* Framer Motion */}
+        <section className="p-4 w-[45%] max-w-md min-w-[16rem] flex flex-col gap-6 items-center justify-center">
+          {/* Framer Motion nav dropdown */}
+          <div className="header-content-container text-white flex flex-col gap-4 items-center bg-slate-700 border-b border-b-slate-500 shadow-xl p-4 w-full">
             <ul className="flex gap-4">
               <li>
                 <button className="bg-slate-600 px-4 py-2.5 rounded-full cursor-pointer hover:bg-slate-500">
@@ -211,7 +251,7 @@ function App() {
                 </button>
               </li>
               <li
-                className="relative "
+                className="relative"
                 onMouseEnter={() => {
                   if (!isDropdownMenuOpen2) {
                     setActiveMenu2("main");
@@ -238,7 +278,7 @@ function App() {
                 <AnimatePresence>
                   {isDropdownMenuOpen2 && (
                     <motion.div
-                      className="dropdown absolute top-14 bg-slate-600 border border-slate-500 left-0 right-0 mx-auto flex flex-col after:w-full after:absolute after:-top-4 after:left-0 after:h-4 min-w-[10rem]"
+                      className="dropdown absolute z-10 top-14 bg-slate-600 border border-slate-500 left-0 right-0 mx-auto flex flex-col min-w-[10rem]"
                       initial={{ opacity: 0, height: "auto" }}
                       animate={{ opacity: 1, height: menuHeight2 }}
                       exit={{ opacity: 0, height: "auto" }}
@@ -378,6 +418,56 @@ function App() {
               </li>
             </ul>
             <h2>Framer Motion Dropdown</h2>
+          </div>
+          {/* Framer Motion modal */}
+          <div className="modal-example-container">
+            <button
+              className="bg-white text-blue-500 font-medium transition-colors rounded px-3 py-2.5 hover:bg-blue-500 hover:text-white"
+              onClick={() => setIsModalOpen2(!isModalOpen2)}
+            >
+              Open Modal
+            </button>
+            <AnimatePresence>
+              {isModalOpen2 && (
+                <motion.section
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                  className="modal2 fixed flex items-center justify-center top-0 left-0 w-full h-full"
+                >
+                  <div
+                    className="modal-overlay2 absolute bg-black opacity-30 h-full left-0 top-0 w-full"
+                    onClick={() => setIsModalOpen2(false)}
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, y: "50px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: "50px" }}
+                    transition={{
+                      opacity: {
+                        duration: 0.2, // custom duration for opacity property only
+                      },
+                      velocity: 2,
+                      bounce: 1,
+                      duration: 0.3,
+                    }}
+                    className="modal-content2 relative flex items-center justify-center bg-white rounded z-10 min-w-[300px] min-h-[150px]"
+                  >
+                    <button
+                      className="absolute top-4 right-4 text-2xl transition-opacity hover:opacity-60 "
+                      aria-label="Close modal"
+                      onClick={() => setIsModalOpen2(false)}
+                    >
+                      <IoCloseOutline />
+                    </button>
+                    <p className="font-medium tracking-wider">
+                      This is the modal.
+                    </p>
+                  </motion.div>
+                </motion.section>
+              )}
+            </AnimatePresence>
           </div>
         </section>
       </main>
