@@ -35,10 +35,10 @@ function App() {
   const [isModalOpen2, setIsModalOpen2] = useState(false);
 
   return (
-    <div className="App bg-slate-900 min-h-screen overflow-x-hidden">
+    <div className="App min-h-screen overflow-x-hidden">
       <main className="p-4 flex flex-1 flex-wrap justify-evenly gap-4">
         {/* CSS Transition */}
-        <section className="p-4 w-[45%] max-w-md min-w-[16rem] flex flex-col gap-6 items-center justify-center">
+        <section className="w-[45%] max-w-md min-w-[16rem] flex flex-col gap-6 items-center justify-center">
           {/* CSS Transition nav dropdown */}
           <div className="header-content-container text-white flex flex-col gap-4 items-center bg-slate-700 border-b border-b-slate-500 shadow-xl p-4 w-full">
             <ul className="flex gap-4">
@@ -231,7 +231,7 @@ function App() {
           </div>
         </section>
         {/* Framer Motion */}
-        <section className="p-4 w-[45%] max-w-md min-w-[16rem] flex flex-col gap-6 items-center justify-center">
+        <section className="w-[45%] max-w-md min-w-[16rem] flex flex-col gap-6 items-center justify-center">
           {/* Framer Motion nav dropdown */}
           <div className="header-content-container text-white flex flex-col gap-4 items-center bg-slate-700 border-b border-b-slate-500 shadow-xl p-4 w-full">
             <ul className="flex gap-4">
