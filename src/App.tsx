@@ -33,6 +33,34 @@ function App() {
     }
   }, [activeMenu2, isDropdownMenuOpen2]);
 
+  // Close dropdowns on click outside
+  const dropdownMenuRef = useRef<HTMLLIElement>(null);
+  const dropdownMenuRef2 = useRef<HTMLLIElement>(null);
+
+  // Handle click outside - close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // If click element outside dropdown menu - close dropdown menu
+      // css transition dropdown
+      if (!dropdownMenuRef.current?.contains(event.target as Element)) {
+        setIsDropdownMenuOpen(false);
+      }
+      // framer motion dropdown
+      if (!dropdownMenuRef2.current?.contains(event.target as Element)) {
+        setIsDropdownMenuOpen2(false);
+      }
+    };
+    // Cleanup?
+    if (isDropdownMenuOpen || isDropdownMenuOpen2) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isDropdownMenuOpen, isDropdownMenuOpen2]);
+
   // Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
@@ -72,6 +100,7 @@ function App() {
                   setIsDropdownMenuOpen(false);
                   setMenuHeight("auto");
                 }}
+                ref={dropdownMenuRef}
               >
                 <button
                   aria-label="dropdown menu"
@@ -265,6 +294,7 @@ function App() {
                   setIsDropdownMenuOpen2(false);
                   setMenuHeight2("auto");
                 }}
+                ref={dropdownMenuRef2}
               >
                 <button
                   aria-label="dropdown menu"

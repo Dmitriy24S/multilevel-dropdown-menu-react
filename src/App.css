@@ -8,6 +8,10 @@
   --speed: 500ms;
 }
 
+body {
+  background-color: hsl(222, 47%, 11%);
+}
+
 .dropdown {
   transform: translateX(-35%);
   overflow: hidden;
