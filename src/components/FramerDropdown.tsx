@@ -16,7 +16,7 @@ const FramerDropdown = () => {
       console.log(nodeMenuRef?.current?.offsetHeight);
       setMenuHeight2(nodeMenuRef.current.offsetHeight);
     }
-  }, [activeMenu2, isDropdownMenuOpen2]);
+  }, [activeMenu2]);
 
   // Handle click outside - close dropdown
   const dropdownMenuRef2 = useRef<HTMLLIElement>(null);
