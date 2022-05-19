@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoCaretDown, IoCloseOutline } from "react-icons/io5";
+import { isMobile } from "react-device-detect";
+
 import "./App.css";
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
     }
   }, [activeMenu2, isDropdownMenuOpen2]);
 
+  // Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
 
@@ -60,7 +63,7 @@ function App() {
               <li
                 className="relative"
                 onMouseEnter={() => {
-                  if (!isDropdownMenuOpen) {
+                  if (!isDropdownMenuOpen && !isMobile) {
                     setActiveMenu("main");
                     setIsDropdownMenuOpen(true);
                   }
@@ -76,8 +79,8 @@ function App() {
                     isDropdownMenuOpen && "bg-slate-500"
                   }`}
                   onClick={() => {
-                    setIsDropdownMenuOpen((prev) => !prev);
                     setActiveMenu("main");
+                    setIsDropdownMenuOpen((prev) => !prev);
                   }}
                 >
                   <IoCaretDown />
@@ -253,7 +256,7 @@ function App() {
               <li
                 className="relative"
                 onMouseEnter={() => {
-                  if (!isDropdownMenuOpen2) {
+                  if (!isDropdownMenuOpen2 && !isMobile) {
                     setActiveMenu2("main");
                     setIsDropdownMenuOpen2(true);
                   }
