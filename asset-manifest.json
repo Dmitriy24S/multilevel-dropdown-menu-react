@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/multilevel-dropdown-menu-react/static/css/main.52b950fa.css",
-    "main.js": "/multilevel-dropdown-menu-react/static/js/main.53bdb0d1.js",
+    "main.css": "/multilevel-dropdown-menu-react/static/css/main.c89a80f8.css",
+    "main.js": "/multilevel-dropdown-menu-react/static/js/main.7cad87ca.js",
     "static/js/787.a816b1da.chunk.js": "/multilevel-dropdown-menu-react/static/js/787.a816b1da.chunk.js",
     "index.html": "/multilevel-dropdown-menu-react/index.html",
-    "main.52b950fa.css.map": "/multilevel-dropdown-menu-react/static/css/main.52b950fa.css.map",
-    "main.53bdb0d1.js.map": "/multilevel-dropdown-menu-react/static/js/main.53bdb0d1.js.map",
+    "main.c89a80f8.css.map": "/multilevel-dropdown-menu-react/static/css/main.c89a80f8.css.map",
+    "main.7cad87ca.js.map": "/multilevel-dropdown-menu-react/static/js/main.7cad87ca.js.map",
     "787.a816b1da.chunk.js.map": "/multilevel-dropdown-menu-react/static/js/787.a816b1da.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52b950fa.css",
-    "static/js/main.53bdb0d1.js"
+    "static/css/main.c89a80f8.css",
+    "static/js/main.7cad87ca.js"
   ]
 }
