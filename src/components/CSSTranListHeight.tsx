@@ -26,7 +26,7 @@ const CSSTranListHeight = () => {
               <button
                 aria-label="expand text"
                 onClick={() => handleItemClick(index)}
-                className="text-left bg-yellow-400 text-black p-4 hover:bg-[hsl(48,98%,64%)] rounded transition-all"
+                className="text-left bg-yellow-400 text-black p-4 hover:bg-[hsl(48,98%,64%)] rounded transition-all min-w-full"
               >
                 <h5 className="font-bold">{item.title}</h5>
                 <div
