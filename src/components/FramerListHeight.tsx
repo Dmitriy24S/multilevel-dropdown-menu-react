@@ -20,7 +20,7 @@ const FramerListHeight = () => {
       <ul className="list flex flex-col gap-4">
         {dataText.map((item, index) => {
           return (
-            <li>
+            <li key={index}>
               <button
                 aria-label="expand text"
                 className="text-black text-left bg-yellow-400 hover:bg-yellow-300 p-4 rounded transition-colors min-w-full"

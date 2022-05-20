@@ -16,7 +16,8 @@ const FramerDropdown = () => {
       console.log(nodeMenuRef?.current?.offsetHeight);
       setMenuHeight2(nodeMenuRef.current.offsetHeight);
     }
-  }, [activeMenu2]);
+    // }, [activeMenu2]);
+  }, [activeMenu2, isDropdownMenuOpen2]); // ? isDropdownMenuOpen2 required for auto height to work on 1st try. E.g. animation from main -> to settings menu
 
   // Handle click outside - close dropdown
   const dropdownMenuRef2 = useRef<HTMLLIElement>(null);
