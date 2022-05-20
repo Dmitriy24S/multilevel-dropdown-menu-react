@@ -38,7 +38,7 @@ const FramerModal = () => {
                 bounce: 1,
                 duration: 0.3,
               }}
-              className="modal-content2 relative flex items-center justify-center bg-white rounded z-10 min-w-[300px] min-h-[150px]"
+              className="modal-content2 relative flex items-center justify-center bg-white text-black rounded z-10 min-w-[300px] min-h-[150px]"
             >
               <button
                 className="absolute top-4 right-4 text-2xl transition-opacity hover:opacity-60 "

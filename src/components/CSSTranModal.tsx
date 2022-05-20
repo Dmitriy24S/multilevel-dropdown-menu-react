@@ -25,7 +25,7 @@ const CSSTranModal = () => {
             className="modal-overlay"
             onClick={() => setIsModalOpen(false)}
           />
-          <div className="modal-content relative">
+          <div className="modal-content relative text-black">
             <button
               className="absolute top-4 right-4 text-2xl transition-opacity hover:opacity-60 "
               aria-label="Close modal"
