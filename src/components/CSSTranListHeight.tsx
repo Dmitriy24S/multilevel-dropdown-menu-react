@@ -7,6 +7,7 @@ const CSSTranListHeight = () => {
 
   const handleItemClick = (index: number) => {
     if (index === activeItemIndex) {
+      // If item already selected - deselect
       setActiveItemIndex(-1);
     } else {
       setActiveItemIndex(index);

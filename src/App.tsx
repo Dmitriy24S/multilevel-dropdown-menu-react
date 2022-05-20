@@ -3,11 +3,12 @@ import CSSTranDropdown from "./components/CSSTranDropdown";
 import CSSTranListHeight from "./components/CSSTranListHeight";
 import CSSTranModal from "./components/CSSTranModal";
 import FramerDropdown from "./components/FramerDropdown";
+import FramerListHeight from "./components/FramerListHeight";
 import FramerModal from "./components/FramerModal";
 
 function App() {
   return (
-    <div className="App min-h-screen text-white overflow-x-hidden">
+    <div className="App min-h-screen text-white overflow-x-hidden mb-8">
       <main className="p-4 flex flex-1 flex-wrap items-start justify-evenly gap-4">
         {/* CSS Transition */}
         <section className="w-[45%] max-w-md min-w-[16rem] flex flex-col gap-6 items-center justify-center">
@@ -25,6 +26,8 @@ function App() {
           <FramerDropdown />
           {/* Framer Motion modal */}
           <FramerModal />
+          {/* Framer Motion auto height list */}
+          <FramerListHeight />
         </section>
       </main>
     </div>
