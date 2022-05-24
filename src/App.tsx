@@ -1,5 +1,6 @@
 import "./App.css";
 import CSSTranDropdown from "./components/CSSTranDropdown";
+import CSSTranInOutList from "./components/CSSTranInOutList";
 import CSSTranListHeight from "./components/CSSTranListHeight";
 import CSSTranModal from "./components/CSSTranModal";
 import FramerDropdown from "./components/FramerDropdown";
@@ -18,6 +19,8 @@ function App() {
           <CSSTranModal />
           {/* CSS Transition auto height list */}
           <CSSTranListHeight />
+          {/* CSS Transition in-out list */}
+          <CSSTranInOutList />
         </section>
 
         {/* Framer Motion */}
