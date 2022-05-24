@@ -4,6 +4,7 @@ import CSSTranInOutList from "./components/CSSTranInOutList";
 import CSSTranListHeight from "./components/CSSTranListHeight";
 import CSSTranModal from "./components/CSSTranModal";
 import FramerDropdown from "./components/FramerDropdown";
+import FramerInOutList from "./components/FramerInOutList";
 import FramerListHeight from "./components/FramerListHeight";
 import FramerModal from "./components/FramerModal";
 
@@ -31,6 +32,8 @@ function App() {
           <FramerModal />
           {/* Framer Motion auto height list */}
           <FramerListHeight />
+          {/* Framer Motion in-out list */}
+          <FramerInOutList />
         </section>
       </main>
     </div>
