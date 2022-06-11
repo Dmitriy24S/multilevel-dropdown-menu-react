@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# Multilevel Dropdown Menu
+
+![Design preview for Multilevel dropdown menu](./design/preview.png)
+
+## Welcome 
+
+Multilevel dropdown menu. Created with React, Tailwind CSS & CSSTransition / Framer Motion.
+[Live Demo](https://dmitriy24s.github.io/multilevel-dropdown-menu-react/) 👈
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
